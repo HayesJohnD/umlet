@@ -29,6 +29,7 @@ public class ConfigHandler {
 
 	private static final String PROGRAM_VERSION = "program_version";
 	private static final String PROPERTIES_PANEL_FONTSIZE = "properties_panel_fontsize";
+	private static final String EXPORT_SCALE = "export_scale";
 	private static final String DEFAULT_FONTSIZE = "default_fontsize";
 	private static final String DEFAULT_FONTFAMILY = "default_fontfamily";
 	private static final String SHOW_STICKINGPOLYGON = "show_stickingpolygon";
@@ -86,6 +87,7 @@ public class ConfigHandler {
 		cfg.setProgramVersion(getStringProperty(props, PROGRAM_VERSION, Program.getInstance().getVersion()));
 		cfg.setDefaultFontsize(getIntProperty(props, DEFAULT_FONTSIZE, cfg.getDefaultFontsize()));
 		cfg.setPropertiesPanelFontsize(getIntProperty(props, PROPERTIES_PANEL_FONTSIZE, cfg.getPropertiesPanelFontsize()));
+		cfg.setExportScale(getIntProperty(props, EXPORT_SCALE, cfg.getExportScale()));
 		cfg.setDefaultFontFamily(getStringProperty(props, DEFAULT_FONTFAMILY, cfg.getDefaultFontFamily()));
 		SharedConfig.getInstance().setShow_stickingpolygon(getBoolProperty(props, SHOW_STICKINGPOLYGON, SharedConfig.getInstance().isShow_stickingpolygon()));
 		cfg.setShow_grid(getBoolProperty(props, SHOW_GRID, cfg.isShow_grid()));
@@ -161,6 +163,7 @@ public class ConfigHandler {
 			props.setProperty(PROGRAM_VERSION, Program.getInstance().getVersion());
 			props.setProperty(DEFAULT_FONTSIZE, Integer.toString(cfg.getDefaultFontsize()));
 			props.setProperty(PROPERTIES_PANEL_FONTSIZE, Integer.toString(cfg.getPropertiesPanelFontsize()));
+			props.setProperty(EXPORT_SCALE, Integer.toString(cfg.getExportScale()));
 			props.setProperty(DEFAULT_FONTFAMILY, cfg.getDefaultFontFamily());
 			props.setProperty(SHOW_STICKINGPOLYGON, Boolean.toString(SharedConfig.getInstance().isShow_stickingpolygon()));
 			props.setProperty(SHOW_GRID, Boolean.toString(cfg.isShow_grid()));
